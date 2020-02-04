@@ -1,6 +1,10 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'mostrar'.
 function mostrar()
 {
-	alert("ok");
+	var alerta
+
+	alerta = "Esto funciona de maravilla"
+	alert(alerta);
+	console.log('no hay errores')
 }
 
