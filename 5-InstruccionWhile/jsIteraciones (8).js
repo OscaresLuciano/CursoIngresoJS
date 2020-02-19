@@ -1,32 +1,39 @@
 function mostrar()
 {
 
-	var contador=0;
-	var positivo=0;
-	var negativo=1;
-	
-	var respuesta='si';
+	var contador = 0;
+	var positivo = 0;
+	var negativo = 1;
+	var respuesta = true;
 
-	respuesta = prompt("Ingresar número?")
+	while(respuesta == true){
 
-	while(respuesta == "si"){
-		valor = prompt("Ingrese un número");
-		valor = parseInt(valor);
+		numero = prompt("Ingrese un número");
+		numero = parseInt(numero);
 
-		if(valor >= 0){
-			positivo = positivo + valor
-			console.log(positivo)
-		}else{
-			negativo = negativo * valor
-			console.log(negativo)
-		}
+		do {
+			
+			if(numero >= 0){
 
-		respuesta = prompt("Ingresar otro número?")
+				positivo += numero
+				console.log("Suma de números positivo: " + positivo);
+
+			}else{
+
+				negativo *= numero
+				console.log("Producto  de números negativos: " + negativo);
+
+			}
+
+		respuesta = confirm("Ingresar otro número?")
+
+		}while (isNaN(numero)) ;
+
 		contador++
 	}
 
 
-document.getElementById('suma').value=positivo;
-document.getElementById('producto').value=negativo;
+document.getElementById('suma').value = positivo;
+document.getElementById('producto').value = negativo;
 
 }//FIN DE LA FUNCIÓN

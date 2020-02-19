@@ -1,29 +1,46 @@
 function mostrar()
 {
-	var max = 0;
-	var min = 999999999;
+	var max;
+	var min;
 	var num = 0;
-	var respuesta='si';
+	var primeraVez = true; // flag o bandera
+	var respuesta = true;
 
-	respuesta = prompt("Ingresar numero?");
-
-	while(respuesta!='no')
+	while(respuesta == true)
 	{
 		num = prompt("ingrese un numero");
 		num = parseInt(num);
+		
+		do {
+			
+			console.log("Numero ingresado: " + num)
 
-		console.log("numero ingresado: " + num)
+			if(primeraVez) {
 
-		if(num > max){
-			max = num;
-			console.log("maximo: " + max);
-		}
-		if(num < min){
-			min = num;
-			console.log("minimo: " + min);
-		}
+				primeraVez = false;
+				max = num;
+				min = num;
+				console.log("maximo: " + max);
+				console.log("minimo: " + min);
 
-		respuesta = prompt("Ingresar otro numero?");
+			} else {
+
+				if (num > max) {
+					max = num;
+					console.log("maximo: " + max);
+				}
+
+				if (num < min) {
+					min = num;
+					console.log("minimo: " + min);
+				}
+
+			}
+
+
+			respuesta = confirm("Ingresar otro numero?");
+
+		} while (isNaN(num)) 
 		
 	}
 
