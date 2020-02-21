@@ -6,18 +6,20 @@ function mostrar()
 	var contadorPositivos = 0;
 	var contadorCeros = 0;
 	var contadorPares = 0;
-	var promedioPositivos;
-	var promedioNegativos;
+	var promedioPositivos = 0;
+	var promedioNegativos = 0;
 	var diferencia;
-
-	var contador = 0;
+	var numero;
 	//declarar contadores y variables 
 	
 	var respuesta="si";
+	
 
 	while(respuesta!="no") {
 		numero = prompt("ingrese un numero");
 		numero = parseInt(numero);
+
+		var tipo=(numero%2)?"Impar":"Par";
 
 		console.log("numero ingresado: " + numero);
 
@@ -45,12 +47,12 @@ function mostrar()
 
 			} else if (numero == 0) {
 
-				contadorCeros++;
+				++contadorCeros;
 				console.log("Cantidad de ceros: " + contadorCeros);
 
-			}else if(numero % 2 == 0) {
+			}else if (tipo == "par") {
 
-				contadorPares++;
+				++contadorPares;
 				console.log("Cantidad de pares: " + contadorPares);
 
 			}
@@ -62,16 +64,15 @@ function mostrar()
 		
 
 		respuesta = prompt("Ingresar otro numero?");
-		contador++
 	
 	}
 
-	document.write("Suma de positivos: " + sumaPositivos + "</ br>");
-	document.write("Promedio de positivos: " + promedioPositivos + "</ br>");
+	document.write("Suma de positivos: " + sumaPositivos + "</br>");
+	document.write("Promedio de positivos: " + promedioPositivos + "</br>");
 
-	document.write("Suma de negativos: " + sumaNegativos + "</ br>");
-	document.write("Promedio de negativos: " + promedioNegativos + "</ br>");
+	document.write("Suma de negativos: " + sumaNegativos + "</br>");
+	document.write("Promedio de negativos: " + promedioNegativos + "</br>");
 
-	document.write("Cantidad de ceros: " + contadorCeros + "</ br>");
-	document.write("Cantidad de pares: " + contadorPares + "</ br>");
+	document.write("Cantidad de ceros: " + contadorCeros + "</br>");
+	document.write("Cantidad de pares: " + contadorPares + "</br>");
 }//FIN DE LA FUNCIÓN
